@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>samuel website</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .progress-container {
+      width: 100%;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 8px;
+      margin-top: 5px;
+      display: none;
+    }
+    .progress-bar {
+      height: 8px;
+      background: linear-gradient(90deg, #4caf50, #8bc34a);
+      width: 0%;
+      transition: width 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" class="logo">
+    <h1> DSS SAMUEL</h1>
+
+    <div class="card">
+      <div class="desc"><img src="assets/wa.png" class="icon"> Chat Admin</div>
+      <button class="download-link" onclick="startLoading(this, 'https://wa.me/6283870865298')"> Open WhatsApp</button>
+      <div class="progress-container"><div class="progress-bar"></div></div>
+    </div>
+
+    <div class="card">
+      <div class="desc"><img src="assets/grup.png" class="icon"> Link Grup</div>
+      <button class="download-link" onclick="startLoading(this, 'https://chat.whatsapp.com/FOYMjTBlmdlDYifx5GBwqp')">🚀 Masuk Grup</button>
+      <div class="progress-container"><div class="progress-bar"></div></div>
+    </div>
+
+    <div class="card">
+      <div class="desc"><img src="assets/file1.png" class="icon"> FILE FREE V1 </div>
+      <button class="download-link" onclick="startLoading(this, 'https://www.mediafire.com/file/qiedu0cwl20ia8i/FILE+FREE+SAMUEL+V1.7z/file')">🚀 FILE FREE V1</button>
+      <div class="progress-container"><div class="progress-bar"></div></div>
+    </div>
+
+    <div class="card">
+      <div class="desc"><img src="assets/file2.png" class="icon"> FILE DSS FREE V2</div>
+      <button class="download-link" onclick="startLoading(this, 'https://link-download2.com')"> COMING SOON</button>
+      <div class="progress-container"><div class="progress-bar"></div></div>
+    </div>
+
+    <div class="note-scroll">
+      <p>
+        divice settings sensibility (dss samuel)
+        <br><br>
+        DIVICE SETTINGS SENSIBILITY: Sensitivitas yang Sempurna untuk Perangkat Seluler Anda
+        DIVICE SETTINGS SENSIBILITY adalah aplikasi gaya hidup yang tersedia di platform Android. Dikembangkan oleh Alfnd and Samz, aplikasi gratis ini bertujuan untuk memberikan pengaturan sensitivitas yang sempurna bagi pengguna perangkat mobile mereka.
+
+        Dengan DIVICE SETTINGS SENSIBILITY, pengguna dapat dengan mudah mengatur sensitivitas layar sentuh mereka, memastikan pengalaman yang halus dan responsif saat menggunakan smartphone atau tablet mereka. Baik Anda sedang bermain game, menjelajahi web, atau menggunakan berbagai aplikasi, aplikasi ini memungkinkan Anda untuk menyesuaikan sensitivitas sesuai dengan preferensi Anda.
+
+        Aplikasi ini menawarkan antarmuka yang ramah pengguna, sehingga mudah bagi pengguna untuk menavigasi dan menyesuaikan pengaturan sensitivitas mereka. Dengan menyediakan keseimbangan yang sempurna antara sensitivitas dan akurasi, DIVICE SETTINGS SENSIBILITY meningkatkan kegunaan keseluruhan perangkat mobile Anda.
+
+        Jika Anda sedang mencari cara untuk mengoptimalkan pengalaman layar sentuh Anda, DIVICE SETTINGS SENSIBILITY adalah aplikasi yang wajib dimiliki. Unduh secara gratis dari platform Android dan nikmati sensitivitas yang sempurna untuk perangkat mobile Anda.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function startLoading(btn, link) {
+      btn.disabled = true;
+      btn.innerHTML = '⏳ Loading...';
+      const card = btn.parentElement;
+      const progressContainer = card.querySelector('.progress-container');
+      const progressBar = card.querySelector('.progress-bar');
+      
+      progressContainer.style.display = 'block';
+      progressBar.style.width = '0%';
+
+      let progress = 0;
+      const interval = setInterval(() => {
+        if (progress >= 100) {
+          clearInterval(interval);
+          window.open(link, '_blank');
+          btn.disabled = false;
+          btn.innerHTML = ' Buka Lagi';
+          progressContainer.style.display = 'none';
+        } else {
+          progress += 10;
+          progressBar.style.width = progress + '%';
+        }
+      }, 150);
+    }
+  </script>
+</body>
+</html>
